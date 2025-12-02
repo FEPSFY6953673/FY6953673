@@ -13,6 +13,27 @@
     <h2>Student URN: 6953673</h2>
   <hr>
   <h2 style="font-family:calibri;"><b>Conference paper: Orbital debris</b></h2>
+  <p id="totalWordCount"></p>
+  <hr>
+  <script>
+    function displayWordCount(sectionId, outputId) {
+      const text = document.getElementById(sectionId).textContent;
+      const wordArray = text.trim().split(/\s+/);
+      const wordCount = wordArray.length;
+      return wordCount;
+    }
+
+    function displayTotalWordCount() {
+      const introductionCount = displayWordCount("What is space debris?_InText")
+      const impactsCount = displayWordCount("Impacts of space debris_InText")
+      const impactsCount1 = displayWordCount("Impacts of space debris1_InText")
+      const whatCount = displayWordCount("What are we doing about it?_InText")
+      const conclusionCount = displayWordCount("Conclusion_InText")
+      const totalWordCount = introductionCount + impactsCount + whatCount + conclusionCount + impactsCount1;
+      document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+    }
+    window.onload = displayTotalWordCount;
+  </script>
   </head>
   <hr>
   <table>
@@ -27,10 +48,10 @@
     <td><a href="#What is space debris?">What is space debris?</td>
   </tr>
   <tr>
-    <td><a href="#Impacts of space debris ">Impacts of space debris </td>
+    <td><a href="#Impacts of space debris">Impacts of space debris </td>
   </tr>
   <tr>
-    <td><a href="#What are we doing about it? ">What are we doing about it? </td>
+    <td><a href="#What are we doing about it?">What are we doing about it? </td>
   </tr>
   <tr>
     <td><a href="#Conclusion">Conclusion</td>
@@ -41,7 +62,7 @@
   </table>
   <h3 id="Abstract">Abstract</h3>
   <p class="ex1">
-  <pre>
+  <pre id="Abstract_InText">
     Space debris is Defunct human made objects in space, primarily orbiting earth. 
     `There are an estimated 500,000 undocumented objects between 1 and 10 cm and 10s of millions smaller than a cm` (Baiocchi and Welser, 2010).
     They Travel at very high speeds, making them very dangerous if they collide with something.
@@ -52,16 +73,16 @@
   </p>
   <h3 id="What is space debris?">What is space debris? </h4>
   <p class="ex1">
-  <pre>
+  <pre id="What is space debris?_InText">
     Space debris is Defunct human made objects in space, primarily orbiting earth.
     It could be anything from an orbiting booster rocket, to a tiny shard of metal less than 1 cm in length.
     The European space agency estimates that in 2025 there are at least 1.2 million objects greater than 1cm in orbit around earth,
     with 54 000 of them being greater than 10 cm.  
   </pre>
   </p>
-  <h3 id=”Impacts of space debris ”>Impacts of space debris </h5>
+  <h3 id=”Impacts of space debris”>Impacts of space debris </h5>
   <p class="ex1">
-  <pre>
+  <pre id="Impacts of space debris_InText">
     Space debris can be very hazardous to space missions with small undocumented objects collide with spacecraft at high speeds.
     `The primary threat to space operations comes from the smaller and more numerous uncatalogued debris because in low earth orbit
     objects have velocities of 7 or 8 km/s with respect to the ground, meaning even very small objects can impart a tremendous amount of energy if they collide with other objects,
@@ -79,7 +100,7 @@
   </p>
   <img src="spaced.gif"  width="976" height="717">
   <p class="ex1">
-  <pre>
+  <pre id="Impacts of space debris1_InText">
     The image shows the increase in types of orbital debris over time until 2010. This demonstrates how many few objects are documented and tracked as even though this shows 16 000 total objects
     with about 9000 being small fragments, as mentioned earlier, it is estimated that there are 1.2 million undocumented objects in orbit between 1 and 10 cm and 140 million smaller than a cm.
     While there have not been to many severe collisions yet, with the number of objects increasing it becomes increasingly likely.
@@ -90,9 +111,9 @@
     After a few minutes, the motor zipped by, missing the ISS by just a few miles, in space terms a close call” (Adilov, Alexander and Cunningham, 2015). 
   </pre>
   </p>
-  <h3 id=”What are we doing about it? ”>What are we doing about it? </h5>
+  <h3 id=”What are we doing about it?”>What are we doing about it? </h5>
   <p class="ex1">
-  <pre>
+  <pre id="What are we doing about it?_InText">
     With orbital debris making missions in space increasingly difficult and dangerous as well as threatening our satellites, what are we doing about it?
     There are many researchers trying to develop ways of capturing debris and disposing of it safely, but it won't solve the problem unless we fix the root cause
     which is why there are international guidelines. “While not all satellites currently comply with international guidelines, more and more space actors are attempting to stick to the rules.
@@ -107,7 +128,7 @@
   </p>
   <h3 id=”Conclusion”>Conclusion</h5>
   <p class="ex1">
-  <pre>
+  <pre id="Conclusion_InText">
     In conclusion, space debris is a very pressing problem that must be solved quickly to prevent possible disaster with the satellite network and possible loss of life,
     but there are many people working on solutions and preventative measures so it is likely than in future years it will be much less of a problem, 
     but only if we continue to work on it. 
